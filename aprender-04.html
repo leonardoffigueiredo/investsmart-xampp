@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvestSmart - Melhorando a vida dos nossos clientes</title>
+    <link rel="stylesheet" href="css/style-noticia01.css" />
+    <link rel="shortcut icon" href="images/Camada 1.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container-LOGO">
+        <img src="images/Camada 1.png" alt="" />
+        <div class="logo">InvestSmart</div>
+      </div>
+      <nav>
+        <ul>
+          <li id="comment-header"><a href="index.html">Home</a></li>
+          <li id="comment-header"><a href="sobre.html">Sobre Nós</a></li>
+          <li id="comment-header"><a href="blogs-main.html">Blogs</a></li>
+          <li>
+            <button
+              class="button-header"
+              onclick="window.location.href='servicos.html'"
+            >
+              Serviços
+
+              <i class="fa-solid fa-arrow-right" id="seta"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <button id="toggleForm" class="floating-button">
+      <i class="fa-solid fa-envelope fa-2x"></i>
+    </button>
+    <div id="registerForm" class="form-container" style="display: none">
+      <form class="form">
+        <div class="header-container">
+          <p class="title">Entre em Contato</p>
+          <button id="close-btn">X</button>
+        </div>
+        <p class="message">
+          Ficou com alguma dúvida ou está enfrentando alguma dificuldade em um
+          de nossos serviços?
+        </p>
+        <div class="flex">
+          <label>
+            <input
+              required=""
+              placeholder=""
+              type="text"
+              class="input"
+              maxlength="10"
+            />
+            <span>Nome</span>
+          </label>
+          <label>
+            <input
+              required=""
+              placeholder=""
+              type="text"
+              class="input"
+              maxlength="30"
+            />
+            <span>Sobrenome</span>
+          </label>
+        </div>
+        <label>
+          <input required="" placeholder="" type="text" class="input" />
+          <span>Email</span>
+        </label>
+        <textarea
+          id="myTextarea"
+          maxlength="1000"
+          rows="5"
+          placeholder="Escreva sua mensagem aqui..."
+        ></textarea>
+        <div id="charCount" class="char-count">1000 caracteres restantes</div>
+        <button class="submit">Enviar</button>
+      </form>
+    </div>
+
+    <main class="main-news-container">
+      <div>
+        <div class="news-header">
+          <h1>
+            O Que São Juros Compostos e Como Eles Afetam Seus Investimentos
+          </h1>
+          <div class="meta">
+            Publicado em: 06 de Novembro de 2024 | Autor:
+            <a href="github.com/leonardoffigueiredo"
+              >Leonardo Feitosa Figueiredo</a
+            >
+          </div>
+        </div>
+        <div class="news-content">
+          <img
+            src="images/aprender-04.png"
+            alt="Imagem ilustrativa de juros compostos"
+          />
+          <p>
+            Os <strong style="color: green">juros compostos</strong> são um
+            conceito fundamental para quem investe e está buscando aumentar seu
+            patrimônio ao longo do tempo. Eles se referem à aplicação de juros
+            sobre os juros, o que faz com que o valor investido cresça de
+            maneira acelerada.
+          </p>
+
+          <p>
+            Ao investir, você não apenas recebe os juros sobre o valor inicial
+            que investiu, mas também sobre os juros que foram acumulados no
+            período anterior. Isso cria um efeito de "multiplicação" no seu
+            investimento, fazendo com que ele cresça mais rápido à medida que o
+            tempo passa.
+          </p>
+
+          <p>
+            Por exemplo, se você investe R$ 1.000,00 a uma taxa de juros
+            compostos de 10% ao ano, no primeiro ano você terá R$ 1.100,00 (R$
+            1.000 + 10%). No segundo ano, os 10% de juros não serão aplicados
+            sobre R$ 1.000,00, mas sim sobre R$ 1.100,00, resultando em R$
+            1.210,00, e assim por diante.
+          </p>
+
+          <p>
+            Esse efeito é ainda mais poderoso quando o
+            <strong style="color: green">período de tempo</strong> é longo.
+            Quanto mais tempo você deixa seu dinheiro investido, mais os juros
+            compostos trabalham para aumentar seu patrimônio. Por isso, começar
+            a investir o quanto antes é uma das estratégias mais eficazes para
+            construir riqueza no longo prazo.
+          </p>
+
+          <p>
+            Uma dica importante é entender que os
+            <strong style="color: green">juros compostos</strong> podem ser
+            usados tanto a seu favor quanto contra você. No caso de empréstimos
+            ou dívidas, por exemplo, os juros compostos podem fazer com que o
+            valor devido cresça de forma rápida, por isso é importante evitar se
+            endividar e pagar suas dívidas o quanto antes.
+          </p>
+
+          <p>
+            Em resumo, os
+            <strong style="color: green">juros compostos</strong> são uma
+            poderosa ferramenta para quem deseja investir e aumentar seu
+            dinheiro ao longo do tempo. Eles permitem que o seu investimento
+            cresça exponencialmente, mas é importante entender como funcionam
+            para aproveitar seus benefícios de forma eficaz.
+          </p>
+
+          <div class="news-footer">
+            <div class="tags">
+              Tags: <span>Investimentos</span><span>Juros Compostos</span
+              ><span>Finanças Pessoais</span>
+            </div>
+            <div class="share-buttons">
+              <a href="https://x.com/" class="fa-brands fa-twitter"></a>
+              <a
+                href="https://www.linkedin.com/in/"
+                class="fa-brands fa-linkedin"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container-footer">
+        <div class="row-footer">
+          <!-- footer col-->
+          <div class="footer-col">
+            <h4>Site</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="blogs-main.html">Blogs</a></li>
+              <li><a href="sobre.html">Quem somos</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+            </ul>
+          </div>
+          <!--end footer col-->
+          <!-- footer col-->
+          <div class="footer-col">
+            <h4>Redes Sociais</h4>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instragram</a></li>
+              <li><a href="#">Tiktok</a></li>
+              <li><a href="#">Youtube</a></li>
+            </ul>
+          </div>
+          <!--end footer col-->
+          <!-- footer col-->
+          <div class="footer-col">
+            <h4>Serviços</h4>
+            <ul>
+              <li><a href="#">Calculos de Despesas</a></li>
+              <li><a href="#">Investimentos</a></li>
+            </ul>
+          </div>
+          <!--end footer col-->
+          <!-- footer col-->
+          <div class="footer-col">
+          <h4>Inscreva-se na Newsletter</h4>
+          <div class="form-sub">
+              <form id="newsletter-form">
+                  <input type="email" id="email" placeholder="Digite o seu e-mail" required />
+                  <button type="submit">Se inscrever</button>
+              </form>
+          </div>
+      </div>              
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script
+    src="https://kit.fontawesome.com/65f22fe718.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="script.js"></script>
+  <script
+    src="https://kit.fontawesome.com/e1063b7707.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Impede o envio padrão do formulário
+  
+      var email = document.getElementById('email').value;
+  
+      if (email) {
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', 'newsletter.php', true);
+          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
+          // Envia o email para o backend
+          xhr.send('email=' + encodeURIComponent(email));
+  
+          // Quando a resposta for recebida
+          xhr.onload = function() {
+              if (xhr.status == 200) {
+                  try {
+                      var response = JSON.parse(xhr.responseText);
+                      alert(response.message); // Exibe a mensagem de sucesso ou erro
+                  } catch (e) {
+                      console.error("Resposta inesperada do servidor:", xhr.responseText);
+                      alert("Erro inesperado. Verifique o console para mais detalhes.");
+                  }
+              } else {
+                  alert('Ocorreu um erro ao se inscrever. Tente novamente.');
+              }
+          };
+      } else {
+          alert('Por favor, insira um email válido!');
+      }
+  });
+  </script>
+</html>

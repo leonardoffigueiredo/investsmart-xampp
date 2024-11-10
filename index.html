@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvestSmart - Melhorando a vida dos nossos clientes</title>
+  <link rel="stylesheet" href="css/style-main.css" />
+  <link rel="shortcut icon" href="images/Camada 1.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container-LOGO">
+      <img src="images/Camada 1.png" alt="" />
+      <div class="logo">InvestSmart</div>
+    </div>
+    <nav>
+      <ul>
+        <li id="comment-header"><a href="index.html">Home</a></li>
+        <li id="comment-header"><a href="sobre.html">Sobre Nós</a></li>
+        <li id="comment-header"><a href="blogs-main.html">Blogs</a></li>
+        <li><button class="button-header" onclick="window.location.href='servicos.html'">
+            Serviços
+
+            <i class="fa-solid fa-arrow-right" id="seta"></i>
+          </button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 style="font-size: 64px">Melhorando a vida dos nossos clientes</h1>
+      <p style="max-width: 900px">
+        Quer melhorar sua vida financeira e não sabe como? Aqui na InvestSmart
+        você descobre!
+      </p>
+      <a href="servicos.html"><button class="button-header" onclick="window.location.href='servicos.html'">
+          Serviços
+          <i class="fa-solid fa-arrow-right" id="seta"></i>
+        </button></a>
+    </div>
+    <div class="hero-image">
+      <img src="images/01.png" alt="Imagem ilustrativa" />
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Gerencie todas suas finanças em um só lugar!</h2>
+    <p>O que oferecemos?</p>
+    <div class="features-grid">
+      <div class="feature-item">
+        <img src="images/blog.svg" alt="" />
+        <h3>Blog de finanças</h3>
+        <p>
+          Aqui temos blogs de notícias financeiras atualizadas diariamente por
+          nossa equipe, nos blogs tem ensinamentos de finanças e notícias
+          diárias sobre o mercado financeiro.
+        </p>
+      </div>
+      <div class="feature-item">
+        <img src="images/recommendations.svg" alt="" />
+        <h3>Recomendações de investimentos</h3>
+        <p>
+          Em um de nossos serviços possuímos ferramentas para auxiliá-los para
+          o que fazer com seu dinheiro e quais riscos quer e pode correr.
+        </p>
+      </div>
+      <div class="feature-item">
+        <img src="images/analytics.svg" alt="" />
+        <h3>Análise das suas finanças</h3>
+        <p>
+          Aqui na InvestSmart você pode listar todos os seus gastos,
+          oferecemos um gráfico sobre e também recomendamos onde pode ou não
+          economizar mais para investir seu dinheiro.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="clientes-lista">
+    <div class="clientes-content">
+      <h2>Já ajudamos milhares de pessoas pelo mundo.</h2>
+      <p>Nós da InvestSmart estamos a cada dia maior!</p>
+    </div>
+    <div class="clientes-stats">
+      <div class="stat-item">
+        <img src="images/members.svg" alt="Members" />
+        <h3>545,341</h3>
+        <p>Assinantes <br />Newsletter</p>
+      </div>
+      <div class="stat-item">
+        <img src="images/viwers.svg" alt="Clubs" />
+        <h3>1,232,381</h3>
+        <p>
+          Viwers no<br />
+          Blog
+        </p>
+      </div>
+      <div class="stat-item">
+        <img src="images/followers.svg" alt="Event Bookings" />
+        <h3>128,867</h3>
+        <p>
+          Seguidores nas <br />
+          Redes Sociais
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-container">
+    <h2>Algumas de Nossas Principais Notícias sobre o Mercado Financeiro</h2>
+    <p class="description">
+      Mantenha-se informado com as últimas atualizações e análises sobre o
+      mercado financeiro. Nesta seção, destacamos as notícias mais relevantes
+      e impactantes que estão moldando o cenário econômico global e local.
+    </p>
+    <div class="blog-cards">
+      <div class="card">
+        <img src="images/blog01.png" alt="Blog image 1" />
+        <div class="card-content">
+          <a href="#" class="read-more">
+            <h3>
+              Mercados em pânico: ações desabam mundo afora enquanto cresce o
+              medo de recessão nos EUA
+            </h3>
+            Ler Sobre →
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/blog02.png" alt="Blog image 2" />
+        <div class="card-content">
+          <a href="#" class="read-more">
+            <h3>
+              Ação da Microsoft afunda, mas papéis de fabricantes de chips
+              sobem conforme rali de IA enfrenta divisão
+            </h3>
+            Ler Sobre →</aS>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/blog03.png" alt="Blog image 3" />
+        <div class="card-content">
+          <a href="#" class="read-more">
+            <h3>
+              Ibovespa tem terceira queda seguida, puxada por Vale e Gerdau
+            </h3>
+            Ler Sobre →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="toggleForm" class="floating-button">
+    <i class="fa-solid fa-envelope fa-2x"></i>
+  </button>
+
+  <div id="registerForm" class="form-container" style="display: none">
+    <form class="form" id="contatoForm" action="processar_contato.php" method="POST">
+      <div class="header-container">
+        <p class="title">Entre em Contato</p>
+        <button id="close-btn" type="button">X</button>
+      </div>
+      <p class="message">
+        Ficou com alguma dúvida ou está enfrentando alguma dificuldade em um
+        de nossos serviços?
+      </p>
+      <div class="flex">
+        <label>
+          <input required name="nome" placeholder="" type="text" class="input" maxlength="20" />
+          <span>Nome</span>
+        </label>
+        <label>
+          <input required name="sobrenome" placeholder="" type="text" class="input" maxlength="40" />
+          <span>Sobrenome</span>
+        </label>
+      </div>
+      <label>
+        <input required name="email" placeholder="" type="text" class="input" />
+        <span>Email</span>
+      </label>
+      <textarea id="myTextarea" name="mensagem" maxlength="1000" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+      <div id="charCount" class="char-count">1000 caracteres restantes</div>
+      <button type="submit" class="submit">Enviar</button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="container-footer">
+      <div class="row-footer">
+        <!-- footer col-->
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="blogs-main.html">Blogs</a></li>
+            <li><a href="">Quem somos</a></li>
+            <li><a href="">Serviços</a></li>
+          </ul>
+        </div>
+        <!--end footer col-->
+        <!-- footer col-->
+        <div class="footer-col">
+          <h4>Redes Sociais</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instragram</a></li>
+            <li><a href="#">Tiktok</a></li>
+            <li><a href="#">Youtube</a></li>
+          </ul>
+        </div>
+        <!--end footer col-->
+        <!-- footer col-->
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#">Calculos de Despesas</a></li>
+            <li><a href="#">Investimentos</a></li>
+          </ul>
+        </div>
+        <!--end footer col-->
+        <!-- footer col-->
+        <div class="footer-col">
+          <h4>Inscreva-se na Newsletter</h4>
+          <div class="form-sub">
+              <form id="newsletter-form">
+                  <input type="email" id="email" placeholder="Digite o seu e-mail" required />
+                  <button type="submit">Se inscrever</button>
+              </form>
+          </div>
+      </div>              
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://kit.fontawesome.com/65f22fe718.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/e1063b7707.js" crossorigin="anonymous"></script>
+<script>
+  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Impede o envio padrão do formulário
+  
+      var email = document.getElementById('email').value;
+  
+      if (email) {
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', 'newsletter.php', true);
+          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
+          // Envia o email para o backend
+          xhr.send('email=' + encodeURIComponent(email));
+  
+          // Quando a resposta for recebida
+          xhr.onload = function() {
+              if (xhr.status == 200) {
+                  try {
+                      var response = JSON.parse(xhr.responseText);
+                      alert(response.message); // Exibe a mensagem de sucesso ou erro
+                  } catch (e) {
+                      console.error("Resposta inesperada do servidor:", xhr.responseText);
+                      alert("Erro inesperado. Verifique o console para mais detalhes.");
+                  }
+              } else {
+                  alert('Ocorreu um erro ao se inscrever. Tente novamente.');
+              }
+          };
+      } else {
+          alert('Por favor, insira um email válido!');
+      }
+  });
+
+  document.getElementById('contatoForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    let formData = new FormData(this);
+    
+    fetch('processar_contato.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.success) {
+            // Limpa o formulário após envio bem-sucedido
+            this.reset();
+            // Fecha o modal
+            document.getElementById('registerForm').style.display = 'none';
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
+    });
+});
+  </script>
+  
+
+</html>
