@@ -158,6 +158,21 @@
       .info-icon:hover {
         color: #00a169;
       }
+
+       /* Estilos para projeções */
+  .projection {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .projection-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  .risk-explanation {
+    margin-top: 1rem;
+    font-style: italic;
+  }
     </style>
   </head>
 
@@ -239,23 +254,30 @@
     <main>
       <section class="investment-section">
         <h2>Recomendações de Investimento</h2>
+        <!-- Instruções adicionadas -->
+        <p>Preencha o valor que deseja investir e selecione o nível de risco para obter recomendações personalizadas.</p>
         <form id="investment-form">
           <label for="investment-amount">Valor Disponível para Investir:</label>
-          <input
-            type="number"
-            id="investment-amount"
-            name="investment-amount"
-            required
-          />
+          <input type="number" id="investment-amount" name="investment-amount" required min="100" />
+          
           <label for="risk-level">Nível de Risco:</label>
           <select name="risk-level" id="risk-level">
             <option value="conservador">Conservador</option>
             <option value="moderado">Moderado</option>
             <option value="arrojado">Arrojado</option>
           </select>
+          
           <button type="submit">Obter Recomendações</button>
         </form>
+      
         <div id="investment-recommendation"></div>
+        <div class="risk-explanation">
+          <h4>O que significam os Níveis de Risco?</h4>
+          <p><strong>Conservador:</strong> Investimentos com risco mínimo e retornos estáveis.</p>
+          <p><strong>Moderado:</strong> Investimentos com risco intermediário e potencial de maior retorno.</p>
+          <p><strong>Arrojado:</strong> Investimentos mais arriscados, com potencial para retornos altos.</p>
+        </div>
+      
       </section>
     </main>
 
@@ -295,15 +317,20 @@
           </div>
           <!--end footer col-->
           <!-- footer col-->
-        <div class="footer-col">
-          <h4>Inscreva-se na Newsletter</h4>
-          <div class="form-sub">
+          <div class="footer-col">
+            <h4>Inscreva-se na Newsletter</h4>
+            <div class="form-sub">
               <form id="newsletter-form">
-                  <input type="email" id="email" placeholder="Digite o seu e-mail" required />
-                  <button type="submit">Se inscrever</button>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Digite o seu e-mail"
+                  required
+                />
+                <button type="submit">Se inscrever</button>
               </form>
+            </div>
           </div>
-      </div>              
         </div>
       </div>
     </footer>
@@ -328,9 +355,9 @@
         name: "CDB",
         riskLevel: "conservador",
         minAmount: 100,
-        returnRate: 0.009,
+        returnRate: 0.01, // taxa atualizada
         example: "Banco Inter",
-        link: "https://www.bancointer.com.br/investimentos/cdb/",
+        link: "https://inter.co/pra-voce/investimentos/renda-fixa/cdb/",
         description:
           "Certificado de Depósito Bancário: Empréstimo para o banco com rendimento fixo.",
       },
@@ -338,9 +365,9 @@
         name: "Tesouro Direto",
         riskLevel: "conservador",
         minAmount: 30,
-        returnRate: 0.01,
+        returnRate: 0.011, // taxa atualizada
         example: "Tesouro Selic",
-        link: "https://www.tesourodireto.com.br/titulos/tipos-de-tesouro.htm",
+        link: "https://www.tesourodireto.com.br/titulos/precos-e-taxas.htm",
         description:
           "Títulos públicos emitidos pelo governo federal com diferentes prazos e rentabilidades.",
       },
@@ -348,9 +375,9 @@
         name: "LCI/LCA",
         riskLevel: "conservador",
         minAmount: 1000,
-        returnRate: 0.0095,
+        returnRate: 0.0098, // taxa atualizada
         example: "XP Investimentos",
-        link: "https://www.xpi.com.br/investimentos/renda-fixa/lci-lca/",
+        link: "https://www.xpi.com.br/produtos/renda-fixa/",
         description:
           "Letras de Crédito Imobiliário/do Agronegócio: Investimentos isentos de IR para pessoa física.",
       },
@@ -358,9 +385,9 @@
         name: "Fundos de Renda Fixa",
         riskLevel: "moderado",
         minAmount: 100,
-        returnRate: 0.011,
+        returnRate: 0.012, // taxa atualizada
         example: "BTG Pactual",
-        link: "https://investimentos.btgpactual.com/renda-fixa",
+        link: "https://investimentos.btgpactual.com/renda-fixa/calculadora-de-renda-fixa",
         description:
           "Carteira diversificada de títulos de renda fixa gerida por profissionais.",
       },
@@ -368,9 +395,9 @@
         name: "Fundos Multimercado",
         riskLevel: "moderado",
         minAmount: 500,
-        returnRate: 0.013,
+        returnRate: 0.014, // taxa atualizada
         example: "Órama",
-        link: "https://www.orama.com.br/investimentos/fundos-de-investimento/lista-fundos/multimercado",
+        link: "https://www.orama.com.br/",
         description:
           "Fundos que investem em diferentes classes de ativos, buscando melhor relação risco-retorno.",
       },
@@ -378,9 +405,9 @@
         name: "ETFs",
         riskLevel: "moderado",
         minAmount: 100,
-        returnRate: 0.012,
+        returnRate: 0.013, // taxa atualizada
         example: "iShares BOVA11",
-        link: "https://www.blackrock.com/br/produtos/251816/ishares-ibovespa-fundo-de-ndice-fund",
+        link: "https://www.blackrock.com/br/products/251902/ishares-sp-500-fi-em-cotas-de-fundo-de-ndice-inv-no-exterior-fund",
         description:
           "Fundos negociados em bolsa que acompanham índices de mercado.",
       },
@@ -388,9 +415,9 @@
         name: "Ações",
         riskLevel: "arrojado",
         minAmount: 100,
-        returnRate: 0.015,
+        returnRate: 0.017, // taxa atualizada
         example: "PETR4",
-        link: "https://www.clear.com.br/site/acoes",
+        link: "https://corretora.clear.com.br/investimentos/acoes/",
         description:
           "Participação na propriedade de empresas listadas na bolsa de valores.",
       },
@@ -398,9 +425,9 @@
         name: "FIIs",
         riskLevel: "arrojado",
         minAmount: 100,
-        returnRate: 0.014,
+        returnRate: 0.015, // taxa atualizada
         example: "KNRI11",
-        link: "https://www.rico.com.br/fundos-imobiliarios",
+        link: "https://www.rico.com.vc/produtos/fundos-imobiliarios/",
         description:
           "Fundos de Investimento Imobiliário: Investimento em imóveis comerciais, shoppings, galpões, etc.",
       },
@@ -408,9 +435,9 @@
         name: "Criptomoedas",
         riskLevel: "arrojado",
         minAmount: 50,
-        returnRate: 0.02,
+        returnRate: 0.025, // taxa atualizada
         example: "Bitcoin",
-        link: "https://www.binance.com/pt-BR/buy-sell-crypto",
+        link: "https://www.binance.com/pt-BR",
         description:
           "Moedas digitais descentralizadas baseadas em tecnologia blockchain.",
       },
@@ -418,9 +445,9 @@
         name: "Debêntures",
         riskLevel: "moderado",
         minAmount: 1000,
-        returnRate: 0.0115,
+        returnRate: 0.012, // taxa atualizada
         example: "Debêntures Incentivadas",
-        link: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-fixa/debentures.htm",
+        link: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-fixa/debentures/debentures-listados/",
         description:
           "Títulos de dívida emitidos por empresas para financiar projetos e operações.",
       },
@@ -428,9 +455,9 @@
         name: "COE",
         riskLevel: "moderado",
         minAmount: 5000,
-        returnRate: 0.0125,
+        returnRate: 0.013, // taxa atualizada
         example: "COE Autocall",
-        link: "https://www.xpi.com.br/investimentos/coe/",
+        link: "https://www.xpi.com.br/produtos/coe/",
         description:
           "Certificado de Operações Estruturadas: Produto que combina renda fixa e variável.",
       },
@@ -438,7 +465,7 @@
         name: "Fundos de Ações",
         riskLevel: "arrojado",
         minAmount: 100,
-        returnRate: 0.016,
+        returnRate: 0.018, // taxa atualizada
         example: "Alaska Black FIC FIA",
         link: "https://www.alaska-asset.com.br/",
         description:
@@ -449,13 +476,11 @@
     investmentForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      const amount = parseFloat(
-        document.getElementById("investment-amount").value
-      );
+      const amount = parseFloat(document.getElementById("investment-amount").value);
       const riskLevel = document.getElementById("risk-level").value;
 
-      if (isNaN(amount) || amount < 10) {
-        alert("Por favor, insira um valor válido (mínimo R$ 10,00).");
+      if (isNaN(amount) || amount < 50) {
+        alert("Por favor, insira um valor válido (mínimo R$ 50,00).");
         return;
       }
 
@@ -467,9 +492,7 @@
     }
 
     function displayInvestmentRecommendations(amount, riskLevel) {
-      investmentRecommendationDiv.innerHTML = `<h3>Valor Disponível para Investir: R$ ${amount.toFixed(
-        2
-      )}</h3>`;
+      investmentRecommendationDiv.innerHTML = `<h3>Valor Disponível para Investir: R$ ${amount.toFixed(2)}</h3>`;
 
       const filteredOptions = investmentOptions.filter(
         (option) => option.riskLevel === riskLevel && option.minAmount <= amount
@@ -481,21 +504,9 @@
       }
 
       filteredOptions.forEach((option) => {
-        const projected3Months = calculateProjectedReturn(
-          amount,
-          option.returnRate,
-          3
-        );
-        const projected6Months = calculateProjectedReturn(
-          amount,
-          option.returnRate,
-          6
-        );
-        const projected1Year = calculateProjectedReturn(
-          amount,
-          option.returnRate,
-          12
-        );
+        const projected3Months = calculateProjectedReturn(amount, option.returnRate, 3);
+        const projected6Months = calculateProjectedReturn(amount, option.returnRate, 6);
+        const projected1Year = calculateProjectedReturn(amount, option.returnRate, 12);
 
         const recommendationElement = document.createElement("div");
         recommendationElement.classList.add("recommendation");
@@ -503,12 +514,8 @@
         recommendationElement.innerHTML = `
             <h4>${option.name}</h4>
             <p><strong>Descrição:</strong> ${option.description}</p>
-            <p><strong>Retorno esperado:</strong> ${(
-              option.returnRate * 100
-            ).toFixed(1)}%</p>
-            <p><strong>Exemplo:</strong> <a href="${
-              option.link
-            }" target="_blank">${option.example}</a></p>
+            <p><strong>Retorno esperado:</strong> ${(option.returnRate * 100).toFixed(1)}%</p>
+            <p><strong>Exemplo:</strong> <a href="${option.link}" target="_blank">${option.example}</a></p>
             <p><strong>Projeções de Retorno:</strong></p>
             <ul>
                 <li>3 meses: R$ ${projected3Months.toFixed(2)}</li>
@@ -520,39 +527,49 @@
         investmentRecommendationDiv.appendChild(recommendationElement);
       });
     }
-  </script>
+</script>
 
   <script>
-  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-      e.preventDefault(); // Impede o envio padrão do formulário
-  
-      var email = document.getElementById('email').value;
-  
-      if (email) {
+    document
+      .getElementById("newsletter-form")
+      .addEventListener("submit", function (e) {
+        e.preventDefault(); // Impede o envio padrão do formulário
+
+        var email = document.getElementById("email").value;
+
+        if (email) {
           var xhr = new XMLHttpRequest();
-          xhr.open('POST', 'newsletter.php', true);
-          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  
+          xhr.open("POST", "newsletter.php", true);
+          xhr.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+          );
+
           // Envia o email para o backend
-          xhr.send('email=' + encodeURIComponent(email));
-  
+          xhr.send("email=" + encodeURIComponent(email));
+
           // Quando a resposta for recebida
-          xhr.onload = function() {
-              if (xhr.status == 200) {
-                  try {
-                      var response = JSON.parse(xhr.responseText);
-                      alert(response.message); // Exibe a mensagem de sucesso ou erro
-                  } catch (e) {
-                      console.error("Resposta inesperada do servidor:", xhr.responseText);
-                      alert("Erro inesperado. Verifique o console para mais detalhes.");
-                  }
-              } else {
-                  alert('Ocorreu um erro ao se inscrever. Tente novamente.');
+          xhr.onload = function () {
+            if (xhr.status == 200) {
+              try {
+                var response = JSON.parse(xhr.responseText);
+                alert(response.message); // Exibe a mensagem de sucesso ou erro
+              } catch (e) {
+                console.error(
+                  "Resposta inesperada do servidor:",
+                  xhr.responseText
+                );
+                alert(
+                  "Erro inesperado. Verifique o console para mais detalhes."
+                );
               }
+            } else {
+              alert("Ocorreu um erro ao se inscrever. Tente novamente.");
+            }
           };
-      } else {
-          alert('Por favor, insira um email válido!');
-      }
-  });
+        } else {
+          alert("Por favor, insira um email válido!");
+        }
+      });
   </script>
 </html>

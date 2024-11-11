@@ -110,6 +110,14 @@
           <i class="fas fa-balance-scale"></i>
           <span>Comparador de Empréstimos</span>
         </button>
+
+        <button
+          class="servico-btn"
+          onclick="window.location.href='cambio.html'"
+        >
+          <i class="fas fa-dollar-sign"></i>
+          <span>Cotações de Moedas</span>
+        </button>
       </div>
     </main>
 
@@ -142,21 +150,32 @@
           <div class="footer-col">
             <h4>Serviços</h4>
             <ul>
-              <li><a href="#">Calculos de Despesas</a></li>
-              <li><a href="#">Investimentos</a></li>
+              <li><a href="calculadora.html">Calculos de Despesas</a></li>
+              <li><a href="recomendacaoinvestimento.html">Investimentos</a></li>
+              <li>
+                <a href="comparador-emprestimos.html"
+                  >Comparador de Empréstimos</a
+                >
+              </li>
+              <li><a href="cambio.html">Cotações de Moedas</a></li>
             </ul>
           </div>
           <!--end footer col-->
           <!-- footer col-->
-         <div class="footer-col">
-          <h4>Inscreva-se na Newsletter</h4>
-          <div class="form-sub">
+          <div class="footer-col">
+            <h4>Inscreva-se na Newsletter</h4>
+            <div class="form-sub">
               <form id="newsletter-form">
-                  <input type="email" id="email" placeholder="Digite o seu e-mail" required />
-                  <button type="submit">Se inscrever</button>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Digite o seu e-mail"
+                  required
+                />
+                <button type="submit">Se inscrever</button>
               </form>
+            </div>
           </div>
-      </div>              
         </div>
       </div>
     </footer>
@@ -172,36 +191,46 @@
   ></script>
 
   <script>
-  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-      e.preventDefault(); // Impede o envio padrão do formulário
-  
-      var email = document.getElementById('email').value;
-  
-      if (email) {
+    document
+      .getElementById("newsletter-form")
+      .addEventListener("submit", function (e) {
+        e.preventDefault(); // Impede o envio padrão do formulário
+
+        var email = document.getElementById("email").value;
+
+        if (email) {
           var xhr = new XMLHttpRequest();
-          xhr.open('POST', 'newsletter.php', true);
-          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  
+          xhr.open("POST", "newsletter.php", true);
+          xhr.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+          );
+
           // Envia o email para o backend
-          xhr.send('email=' + encodeURIComponent(email));
-  
+          xhr.send("email=" + encodeURIComponent(email));
+
           // Quando a resposta for recebida
-          xhr.onload = function() {
-              if (xhr.status == 200) {
-                  try {
-                      var response = JSON.parse(xhr.responseText);
-                      alert(response.message); // Exibe a mensagem de sucesso ou erro
-                  } catch (e) {
-                      console.error("Resposta inesperada do servidor:", xhr.responseText);
-                      alert("Erro inesperado. Verifique o console para mais detalhes.");
-                  }
-              } else {
-                  alert('Ocorreu um erro ao se inscrever. Tente novamente.');
+          xhr.onload = function () {
+            if (xhr.status == 200) {
+              try {
+                var response = JSON.parse(xhr.responseText);
+                alert(response.message); // Exibe a mensagem de sucesso ou erro
+              } catch (e) {
+                console.error(
+                  "Resposta inesperada do servidor:",
+                  xhr.responseText
+                );
+                alert(
+                  "Erro inesperado. Verifique o console para mais detalhes."
+                );
               }
+            } else {
+              alert("Ocorreu um erro ao se inscrever. Tente novamente.");
+            }
           };
-      } else {
-          alert('Por favor, insira um email válido!');
-      }
-  });
+        } else {
+          alert("Por favor, insira um email válido!");
+        }
+      });
   </script>
 </html>

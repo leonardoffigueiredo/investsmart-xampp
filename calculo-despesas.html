@@ -287,17 +287,23 @@
           <!--end footer col-->
           <!-- footer col-->
           <div class="footer-col">
-          <h4>Inscreva-se na Newsletter</h4>
-          <div class="form-sub">
+            <h4>Inscreva-se na Newsletter</h4>
+            <div class="form-sub">
               <form id="newsletter-form">
-                  <input type="email" id="email" placeholder="Digite o seu e-mail" required />
-                  <button type="submit">Se inscrever</button>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Digite o seu e-mail"
+                  required
+                />
+                <button type="submit">Se inscrever</button>
               </form>
+            </div>
           </div>
-      </div>              
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   </body>
   <script
     src="https://kit.fontawesome.com/65f22fe718.js"
@@ -309,15 +315,42 @@
     crossorigin="anonymous"
   ></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("expense-form");
       const expensesList = document.getElementById("expenses-list");
       const totalExpenses = document.getElementById("total-expenses");
-      let expenses = [];
+      let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
       const ctx = document.getElementById("expense-chart").getContext("2d");
       let chart;
+
+      // Função para atualizar a lista de despesas e o total
+      function updateExpensesList() {
+        expensesList.innerHTML = "";
+        let total = 0;
+
+        expenses.forEach((expense, index) => {
+          const li = document.createElement("li");
+          li.className = "expense-item";
+          li.innerHTML = `
+            <span>${expense.name} - R$ ${expense.amount.toFixed(2)} (${
+            expense.category
+          }) - ${expense.frequency}</span>
+            <button onclick="removeExpense(${index})">Remover</button>
+          `;
+          expensesList.appendChild(li);
+          total += expense.amount;
+        });
+
+        totalExpenses.textContent = `Total: R$ ${total.toFixed(2)}`;
+        updateChart();
+        updateSummary();
+
+        // Salvar no localStorage
+        localStorage.setItem("expenses", JSON.stringify(expenses));
+      }
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -334,36 +367,11 @@
         form.reset();
       });
 
-      function updateExpensesList() {
-        expensesList.innerHTML = "";
-        let total = 0;
-
-        expenses.forEach((expense, index) => {
-          const li = document.createElement("li");
-          li.className = "expense-item";
-          li.innerHTML = `
-                    <span>${expense.name} - R$ ${expense.amount.toFixed(2)} (${
-            expense.category
-          }) - ${expense.frequency}</span>
-                    <button onclick="removeExpense(${index})">Remover</button>
-                `;
-          expensesList.appendChild(li);
-          total += expense.amount;
-        });
-
-        totalExpenses.textContent = `Total: R$ ${total.toFixed(2)}`;
-        updateChart();
-        updateSummary();
-      }
-
       function updateChart() {
         const categories = {};
         expenses.forEach((expense) => {
-          if (categories[expense.category]) {
-            categories[expense.category] += expense.amount;
-          } else {
-            categories[expense.category] = expense.amount;
-          }
+          categories[expense.category] =
+            (categories[expense.category] || 0) + expense.amount;
         });
 
         if (chart) {
@@ -395,11 +403,11 @@
         const summarySection = document.createElement("div");
         summarySection.className = "summary-section";
         summarySection.innerHTML = `
-                <h3>Resumo de Despesas</h3>
-                <p>Total de despesas: R$ ${calculateTotal().toFixed(2)}</p>
-                <p>Maior despesa: ${findHighestExpense()}</p>
-                <p>Categoria mais cara: ${findMostExpensiveCategory()}</p>
-            `;
+          <h3>Resumo de Despesas</h3>
+          <p>Total de despesas: R$ ${calculateTotal().toFixed(2)}</p>
+          <p>Maior despesa: ${findHighestExpense()}</p>
+          <p>Categoria mais cara: ${findMostExpensiveCategory()}</p>
+        `;
 
         const existingSummary = document.querySelector(".summary-section");
         if (existingSummary) {
@@ -443,6 +451,7 @@
         updateExpensesList();
       };
 
+      // Exportar como CSV
       document
         .getElementById("export-btn")
         .addEventListener("click", function () {
@@ -458,6 +467,24 @@
           document.body.appendChild(link);
           link.click();
         });
+
+      // Exportar como PDF
+      document
+        .getElementById("export-btn")
+        .addEventListener("click", function () {
+          const element = document.querySelector(".list-section");
+          const options = {
+            margin: 1,
+            filename: "despesas.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+          };
+          html2pdf().set(options).from(element).save();
+        });
+
+      // Carregar despesas ao iniciar a página
+      updateExpensesList();
     });
   </script>
 

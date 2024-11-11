@@ -225,8 +225,8 @@
       pointer-events: none;
     }
     #tooltip {
-      background-color:  #129132;
- /* Fundo branco */
+      background-color: #129132;
+      /* Fundo branco */
       color: #ffffff;
       padding: 15px 20px;
       border-radius: 8px;
@@ -249,7 +249,6 @@
 
       /* Animação suave */
       animation: tooltipFadeIn 0.3s ease-out;
-
     }
 
     /* Seta do tooltip */
@@ -276,8 +275,6 @@
         transform: translateY(0);
       }
     }
-
-    
 
     /* Container da taxa de informação */
     .taxa-info {
@@ -373,7 +370,7 @@
         <button class="submit">Enviar</button>
       </form>
     </div>
-
+<br><br><br><br>
     <main>
       <div class="comparador-container">
         <h1>Comparador de Empréstimos e Financiamentos</h1>
@@ -430,9 +427,12 @@
           <div class="footer-col">
             <h4>Serviços</h4>
             <ul>
-              <li><a href="#">Calculos de Despesas</a></li>
-              <li><a href="#">Investimentos</a></li>
-            </ul>
+                <ul>
+            <li><a href="calculadora.html">Calculos de Despesas</a></li>
+            <li><a href="recomendacaoinvestimento.html">Investimentos</a></li>
+            <li><a href="comparador-emprestimos.html">Comparador de Empréstimos</a></li>
+            <li><a href="cambio.html">Cotações de Moedas</a></li>
+          </ul>
           </div>
           <!--end footer col-->
           <!-- footer col-->
@@ -550,7 +550,9 @@
             <p>Total de juros: ${formatarMoeda(jurosTotal)}</p>
             <p>Taxa de juros mensal: ${taxasInfo[tipo].taxa}</p>
             <p class="taxa-info" style="justify-content: center; margin-top: -10px;">
-                <button class="info-button" onclick="mostrarInfo(event, '${taxasInfo[tipo].descricao}')">
+                <button class="info-button" onclick="mostrarInfo(event, '${
+                  taxasInfo[tipo].descricao
+                }')">
                     <i class="fas fa-info-circle"></i>
                 </button>
             </p>

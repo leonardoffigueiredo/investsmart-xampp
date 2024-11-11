@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InvestSmart - Melhorando a vida dos nossos clientes</title>
-  <link rel="stylesheet" href="css/style-main.css" />
-  <link rel="shortcut icon" href="images/Camada 1.png" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="shortcut icon" href="images/Camada 1.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Cotação Dólar/Real - InvestSmart</title>
+    <link rel="stylesheet" href="css/style-cambio.css">
+    <style>
+        .cotacao-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .cotacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .cotacao-item {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: transform 0.2s;
+        }
+        .cotacao-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .valor {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #2ecc71;
+        }
+        .atualizacao {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+        h3 {
+            color: #34495e;
+            margin: 0;
+        }
+    </style>
 </head>
-
 <body>
-  <header>
+      <header>
     <div class="container-LOGO">
       <img src="images/Camada 1.png" alt="" />
       <div class="logo">InvestSmart</div>
@@ -29,132 +67,38 @@
       </ul>
     </nav>
   </header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <h1 style="font-size: 64px">Melhorando a vida dos nossos clientes</h1>
-      <p style="max-width: 900px">
-        Quer melhorar sua vida financeira e não sabe como? Aqui na InvestSmart
-        você descobre!
-      </p>
-      <a href="servicos.html"><button class="button-header" onclick="window.location.href='servicos.html'">
-          Serviços
-          <i class="fa-solid fa-arrow-right" id="seta"></i>
-        </button></a>
-    </div>
-    <div class="hero-image">
-      <img src="images/01.png" alt="Imagem ilustrativa" />
-    </div>
-  </section>
-
-  <section class="features">
-    <h2>Gerencie todas suas finanças em um só lugar!</h2>
-    <p>O que oferecemos?</p>
-    <div class="features-grid">
-      <div class="feature-item">
-        <img src="images/blog.svg" alt="" />
-        <h3>Blog de finanças</h3>
-        <p>
-          Aqui temos blogs de notícias financeiras atualizadas diariamente por
-          nossa equipe, nos blogs tem ensinamentos de finanças e notícias
-          diárias sobre o mercado financeiro.
-        </p>
-      </div>
-      <div class="feature-item">
-        <img src="images/recommendations.svg" alt="" />
-        <h3>Recomendações de investimentos</h3>
-        <p>
-          Em um de nossos serviços possuímos ferramentas para auxiliá-los para
-          o que fazer com seu dinheiro e quais riscos quer e pode correr.
-        </p>
-      </div>
-      <div class="feature-item">
-        <img src="images/analytics.svg" alt="" />
-        <h3>Análise das suas finanças</h3>
-        <p>
-          Aqui na InvestSmart você pode listar todos os seus gastos,
-          oferecemos um gráfico sobre e também recomendamos onde pode ou não
-          economizar mais para investir seu dinheiro.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="clientes-lista">
-    <div class="clientes-content">
-      <h2>Já ajudamos milhares de pessoas pelo mundo.</h2>
-      <p>Nós da InvestSmart estamos a cada dia maior!</p>
-    </div>
-    <div class="clientes-stats">
-      <div class="stat-item">
-        <i class="fas fa-users fa-3x"></i>
-        <h3>545,341</h3>
-        <p>Assinantes <br />Newsletter</p>
-      </div>
-      <div class="stat-item">
-        <i class="fas fa-eye fa-3x"></i>
-        <h3>1,232,381</h3>
-        <p>
-          Viwers no<br />
-          Blog
-        </p>
-      </div>
-      <div class="stat-item">
-        <i class="fas fa-share-alt fa-3x"></i>
-        <h3>128,867</h3>
-        <p>
-          Seguidores nas <br />
-          Redes Sociais
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="blog-container">
-    <h2>Algumas de Nossas Principais Notícias sobre o Mercado Financeiro</h2>
-    <p class="description">
-      Mantenha-se informado com as últimas atualizações e análises sobre o
-      mercado financeiro. Nesta seção, destacamos as notícias mais relevantes
-      e impactantes que estão moldando o cenário econômico global e local.
-    </p>
-    <div class="blog-cards">
-      <div class="card">
-        <img src="images/blog01.png" alt="Blog image 1" />
-        <div class="card-content">
-          <a href="#" class="read-more">
-            <h3>
-              Mercados em pânico: ações desabam mundo afora enquanto cresce o
-              medo de recessão nos EUA
-            </h3>
-            Ler Sobre →
-          </a>
+    <div class="cotacao-container">
+        <h2>Cotações em Real</h2>
+        <div class="cotacoes-grid">
+            <div class="cotacao-item">
+                <h3>Dólar Americano</h3>
+                <div class="valor" id="cotacao-usd">Carregando...</div>
+            </div>
+            <div class="cotacao-item">
+                <h3>Euro</h3>
+                <div class="valor" id="cotacao-eur">Carregando...</div>
+            </div>
+            <div class="cotacao-item">
+                <h3>Libra Esterlina</h3>
+                <div class="valor" id="cotacao-gbp">Carregando...</div>
+            </div>
+            <div class="cotacao-item">
+                <h3>Iene Japonês</h3>
+                <div class="valor" id="cotacao-jpy">Carregando...</div>
+            </div>
+            <div class="cotacao-item">
+                <h3>Franco Suíço</h3>
+                <div class="valor" id="cotacao-chf">Carregando...</div>
+            </div>
+            <div class="cotacao-item">
+                <h3>Yuan Chinês</h3>
+                <div class="valor" id="cotacao-cny">Carregando...</div>
+            </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="images/blog02.png" alt="Blog image 2" />
-        <div class="card-content">
-          <a href="#" class="read-more">
-            <h3>
-              Ação da Microsoft afunda, mas papéis de fabricantes de chips
-              sobem conforme rali de IA enfrenta divisão
-            </h3>
-            Ler Sobre →</aS>
-        </div>
-      </div>
-      <div class="card">
-        <img src="images/blog03.png" alt="Blog image 3" />
-        <div class="card-content">
-          <a href="#" class="read-more">
-            <h3>
-              Ibovespa tem terceira queda seguida, puxada por Vale e Gerdau
-            </h3>
-            Ler Sobre →
-          </a>
-        </div>
-      </div>
+        <div class="atualizacao" id="atualizacao"></div>
     </div>
-  </div>
-  <button id="toggleForm" class="floating-button">
+
+    <button id="toggleForm" class="floating-button">
     <i class="fa-solid fa-envelope fa-2x"></i>
   </button>
 
@@ -187,7 +131,7 @@
       <button type="submit" class="submit">Enviar</button>
     </form>
   </div>
-
+<br><br><br><br>
   <footer>
     <div class="container-footer">
       <div class="row-footer">
@@ -216,7 +160,7 @@
         <!-- footer col-->
         <div class="footer-col">
           <h4>Serviços</h4>
-          <ul>
+              <ul>
             <li><a href="calculadora.html">Calculos de Despesas</a></li>
             <li><a href="recomendacaoinvestimento.html">Investimentos</a></li>
             <li><a href="comparador-emprestimos.html">Comparador de Empréstimos</a></li>
@@ -273,32 +217,61 @@
           alert('Por favor, insira um email válido!');
       }
   });
-
-  document.getElementById('contatoForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    let formData = new FormData(this);
-    
-    fetch('processar_contato.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.message);
-        if (data.success) {
-            // Limpa o formulário após envio bem-sucedido
-            this.reset();
-            // Fecha o modal
-            document.getElementById('registerForm').style.display = 'none';
-        }
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
-    });
-});
   </script>
-  
 
+    <script>
+        async function obterCotacoes() {
+            try {
+                const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+                const data = await response.json();
+                
+                // Cotações em relação ao dólar
+                const taxas = {
+                    USD: data.rates.BRL,
+                    EUR: data.rates.BRL / data.rates.EUR,
+                    GBP: data.rates.BRL / data.rates.GBP,
+                    JPY: data.rates.BRL / data.rates.JPY,
+                    CHF: data.rates.BRL / data.rates.CHF,
+                    CNY: data.rates.BRL / data.rates.CNY
+                };
+
+                // Atualiza cada cotação
+                document.getElementById('cotacao-usd').innerHTML = `
+                    1 USD = R$ ${taxas.USD.toFixed(2)}
+                `;
+                document.getElementById('cotacao-eur').innerHTML = `
+                    1 EUR = R$ ${taxas.EUR.toFixed(2)}
+                `;
+                document.getElementById('cotacao-gbp').innerHTML = `
+                    1 GBP = R$ ${taxas.GBP.toFixed(2)}
+                `;
+                document.getElementById('cotacao-jpy').innerHTML = `
+                    1 JPY = R$ ${taxas.JPY.toFixed(4)}
+                `;
+                document.getElementById('cotacao-chf').innerHTML = `
+                    1 CHF = R$ ${taxas.CHF.toFixed(2)}
+                `;
+                document.getElementById('cotacao-cny').innerHTML = `
+                    1 CNY = R$ ${taxas.CNY.toFixed(2)}
+                `;
+                
+                const dataAtual = new Date().toLocaleString('pt-BR');
+                document.getElementById('atualizacao').innerHTML = `
+                    Última atualização: ${dataAtual}
+                `;
+            } catch (error) {
+                document.querySelectorAll('.valor').forEach(element => {
+                    element.innerHTML = 'Erro ao obter cotação';
+                });
+                console.error('Erro:', error);
+            }
+        }
+
+        // Atualiza as cotações quando a página carrega
+        obterCotacoes();
+
+        // Atualiza as cotações a cada 5 minutos
+        setInterval(obterCotacoes, 300000);
+    </script>
+</body>
 </html>
